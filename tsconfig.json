@@ -5,6 +5,8 @@
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
     "paths": {
       "*": ["node_modules/*"]
     }
