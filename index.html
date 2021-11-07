@@ -2,24 +2,89 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
+    <style>
+      #drag-file {
+        background-color: blue;
+        color: white;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./dist/renderer.js"></script>
+    <div id="drag-file">
+      <p>Drag your files here</p>
+    </div>
+
+    <script>
+      (function () {
+        var holder = document.getElementById("drag-file");
+
+        holder.ondragover = () => {
+          return false;
+        };
+
+        holder.ondragleave = () => {
+          return false;
+        };
+
+        holder.ondragend = () => {
+          return false;
+        };
+
+        holder.ondrop = (e) => {
+          e.preventDefault();
+
+          console.log(e);
+
+          for (let f of e.dataTransfer.files) {
+            console.log("File(s) you dragged here: ", f.path);
+          }
+
+          return false;
+        };
+      })();
+    </script>
+    <h1>Manda um Anjo developer</h1>
+    <p>
+      Exercitation in consectetur excepteur incididunt et labore. Ullamco est ad
+      sit id ipsum eu ad do. Aliquip sunt eiusmod ipsum ea aute magna ullamco
+      sunt velit labore non. Et nisi culpa consequat esse occaecat cillum. In
+      amet id id id est veniam laborum do laborum ipsum consequat
+      Lorem.Adipisicing mollit labore et adipisicing ipsum duis. Labore sunt qui
+      minim occaecat elit enim ut Lorem. Eu deserunt esse cillum laboris commodo
+      eu. Enim nostrud voluptate nostrud fugiat minim deserunt. Esse aute ex
+      duis commodo sint. Do excepteur sint Lorem est proident mollit. Est culpa
+      proident incididunt est et labore cupidatat ut est dolore deserunt
+      commodo. Proident cillum magna ex Lorem magna ut do. Lorem ullamco eu
+      laboris aliquip et aute officia dolor esse reprehenderit. Non fugiat
+      labore Lorem velit ipsum ea nostrud esse. Duis deserunt amet excepteur est
+      adipisicing sit. Lorem consectetur aliqua ullamco adipisicing sit
+      consectetur pariatur nisi deserunt labore ea adipisicing deserunt
+      voluptate. Sint sint ut commodo eiusmod excepteur pariatur exercitation id
+      proident quis do amet nisi. Excepteur fugiat consequat mollit adipisicing
+      nulla et cupidatat minim adipisicing velit. Voluptate ad dolore sunt velit
+      cupidatat voluptate irure velit esse officia adipisicing ea id. Ad quis
+      consectetur magna exercitation ut ipsum tempor id Lorem. Enim laborum sint
+      et duis Lorem officia cupidatat ut do. Id eu ut deserunt laborum proident
+      sint laborum eiusmod. Nulla sint dolore sunt ad ad sint enim anim. Ex
+      excepteur cillum et ipsum et sunt reprehenderit occaecat officia tempor
+      reprehenderit id in. Et in dolore velit irure. Nulla elit tempor sint
+      commodo aliqua ea eu dolor. Ut mollit ex aute ullamco velit eu ullamco
+      duis ipsum officia Lorem velit est ullamco. Irure mollit in sint consequat
+      fugiat labore qui ut. Culpa ad ex duis magna ipsum amet et et. Duis
+      nostrud consequat adipisicing nulla duis proident sit eiusmod aute
+      deserunt. Velit eu et ad aliqua. Consectetur non occaecat cupidatat irure
+      occaecat mollit dolor voluptate esse excepteur in id. Elit esse excepteur
+      consequat qui tempor officia aliquip eu commodo eu eiusmod. Cupidatat
+      proident aliquip mollit ea amet id cupidatat. Irure nostrud laborum esse
+      consequat cillum mollit. Laborum elit commodo id sit exercitation
+      excepteur ex.
+    </p>
+    <!--canvas></canvas>
+    <script src="./dist/renderer.js"></script-->
   </body>
 </html>
